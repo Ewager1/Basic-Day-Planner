@@ -31,17 +31,6 @@ let currentDayInMonth = currentDate.getDate(); //returns a number from 0-11 base
 let currentYear = currentDate.getFullYear(); // returns current Year
 let currentHour = currentDate.getHours(); // returns current hour
 
-//assignments: textareas
-let textAreaNineAm = $(".textArea9am");
-let textAreaTenAm = $(".textArea10am");
-let textAreaElevenAm = $(".textArea11am");
-let textAreaTwelvePm = $(".textArea12pm");
-let textAreaOnePm = $(".textArea1pm");
-let textAreaTwoPm = $(".textArea2pm");
-let textAreaThreePm = $(".textArea3pm");
-let textAreaFourPm = $(".textArea4pm");
-let textAreaFivePm = $(".textArea5pm");
-
 //Current Date display at top of Page
 
 //string line displaying day of week, month, date, ordinal, and year
@@ -52,38 +41,34 @@ $currentDateandDay.html(
 ); //displays day of week.
 
 //sets the appropriate ordinal to current date
-function dateOrdinal(currentDayInMonth) {
+function dateOrdinal() {
   if (
     currentDayInMonth === 1 ||
     currentDayInMonth === 21 ||
     currentDayInMonth === 31
   ) {
-    return "st";
+    return "st,";
   } else if (currentDayInMonth === 2 || currentDayInMonth === 22) {
-    return "nd";
+    return "nd,";
   } else if (currentDayInMonth === 3) {
-    return "rd";
+    return "rd,";
   } else {
-    return "th";
+    return "th,";
   }
 }
 
-//sets the past, present, and future css. proud of this one. 
-thisTime = document.querySelectorAll('.thisTime')
-startingTimeValue = 9
+//sets the past, present, and future css.
+thisTime = document.querySelectorAll(".thisTime");
+startingTimeValue = 9;
 
-for(i=0;i<thisTime.length;i++){
-    thisTime[i].setAttribute('data-value',startingTimeValue)
-    startingTimeValue++
-    if (thisTime[i].getAttribute('data-value') > currentHour){
-        thisTime[i].classList.add('future')
-    }
-    else if(parseInt(thisTime[i].getAttribute('data-value')) === currentHour){
-        thisTime[i].classList.add('present')
-    }
-    else{thisTime[i].classList.add('past')}
+for (i = 0; i < thisTime.length; i++) {
+  thisTime[i].setAttribute("data-value", startingTimeValue);
+  startingTimeValue++;
+  if (thisTime[i].getAttribute("data-value") > currentHour) {
+    thisTime[i].classList.add("future");
+  } else if (parseInt(thisTime[i].getAttribute("data-value")) === currentHour) {
+    thisTime[i].classList.add("present");
+  } else {
+    thisTime[i].classList.add("past");
+  }
 }
-
-
-
-
