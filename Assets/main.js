@@ -1,9 +1,9 @@
 // assigments
-let $currentDateandDay = $(".currentDateandDay"); //grabs p tag
-let currentDate = new Date(); //grabs todays date from built in function
-let currentDayOfWeek = currentDate.getDay(); //returns a number from 0-6 based on todays day
-let currentMonth = currentDate.getMonth(); // returns current month of year
-let daysOfWeek = [
+const $currentDateandDay = $(".currentDateandDay"); //grabs p tag
+const currentDate = new Date(); //grabs todays date from built in function
+const currentDayOfWeek = currentDate.getDay(); //returns a number from 0-6 based on todays day
+const currentMonth = currentDate.getMonth(); // returns current month of year
+const daysOfWeek = [
   //days of week array
   "Sunday",
   "Monday",
@@ -13,7 +13,7 @@ let daysOfWeek = [
   "Friday",
   "Saturday",
 ];
-let monthsInYear = [
+const monthsInYear = [
   //months in the year array
   "January",
   "February",
@@ -27,11 +27,11 @@ let monthsInYear = [
   "November",
   "December",
 ];
-let currentDayInMonth = currentDate.getDate(); //returns a number from 0-11 based on month
-let currentYear = currentDate.getFullYear(); // returns current Year
-let currentHour = currentDate.getHours(); // returns current hour
-let $saveBtn = $(".saveBtn"); //grabs save buttons
-let $scheduleTime = $(".scheduleTime"); //a class group containing all schedule textboxes
+const currentDayInMonth = currentDate.getDate(); //returns a number from 0-11 based on month
+const currentYear = currentDate.getFullYear(); // returns current Year
+const currentHour = currentDate.getHours(); // returns current hour
+const $saveBtn = $(".saveBtn"); //grabs save buttons
+const $scheduleTime = $(".scheduleTime"); //a class group containing all schedule textboxes
 let startingTimeValue = 9; // used to add data value attribute to saveBtn and scheduleTime
 
 // top of page:  displaying day of week, month, date, ordinal, and year
@@ -89,9 +89,8 @@ $saveBtn.on("click", function () {
   });
 });
 
-//assigns local storage data to appropriate text feild. 
+//assigns local storage data to appropriate text feild.
 $scheduleTime.each(function () {
-    savedText = localStorage.getItem($(this).attr('data-value'));
-    $(this).text(savedText)
-  })
-
+  savedText = localStorage.getItem($(this).attr("data-value"));
+  $(this).text(savedText);
+});

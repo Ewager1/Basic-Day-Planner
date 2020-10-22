@@ -1,16 +1,24 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
   line-height: 1;
+  background-color: whitesmoke;
+}
+
+.header {
+  background-color: #06aed5 !important;
+  color: whitesmoke !important;
 }
 
 textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
   border-left: 1px solid black;
   padding: 10px;
+  font-family: "Architects Daughter", cursive;
+  font-size: larger;
+  font-weight: bold;
 }
 
 .jumbotron {
@@ -19,6 +27,10 @@ textarea {
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+
+.container {
+  margin-bottom: 25px;
 }
 
 .description {
@@ -33,13 +45,20 @@ textarea {
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;
+  border-top: 1px solid whitesmoke;
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: whitesmoke;
+  color: black;
   border-top: 1px dashed #000000;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/*added a bottom border to 5PM to look better*/
+.fivePm {
+  border-bottom: 1px dashed #000000;
 }
 
 .past {
@@ -63,7 +82,6 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
-  padding-bottom: 10px;
 }
 /* Added a little extra style to center icons*/
 i {
