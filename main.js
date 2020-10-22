@@ -81,10 +81,11 @@ $saveBtn.each(function () {
 
 //save text data to local storage
 $saveBtn.on("click", function () {
-  let btnValue = $(this).attr("data-value");
-  console.log(btnValue);
+  let timeValue = $(this).attr("data-value");
   $scheduleTime.each(function () {
-    if ($(this).attr("data-value") == btnValue) {
+    if ($(this).attr("data-value") == timeValue) {
+      console.log($(this).val());
+      localStorage.setItem(timeValue, $(this).val());
     }
   });
 });
