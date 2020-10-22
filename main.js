@@ -84,8 +84,14 @@ $saveBtn.on("click", function () {
   let timeValue = $(this).attr("data-value");
   $scheduleTime.each(function () {
     if ($(this).attr("data-value") == timeValue) {
-      console.log($(this).val());
       localStorage.setItem(timeValue, $(this).val());
     }
   });
 });
+
+//assigns local storage data to appropriate text feild. 
+$scheduleTime.each(function () {
+    savedText = localStorage.getItem($(this).attr('data-value'));
+    $(this).text(savedText)
+  })
+
