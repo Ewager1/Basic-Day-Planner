@@ -1,4 +1,4 @@
-// assigments: current date
+// assigments
 let $currentDateandDay = $(".currentDateandDay"); //grabs p tag
 let currentDate = new Date(); //grabs todays date from built in function
 let currentDayOfWeek = currentDate.getDay(); //returns a number from 0-6 based on todays day
@@ -30,10 +30,11 @@ let monthsInYear = [
 let currentDayInMonth = currentDate.getDate(); //returns a number from 0-11 based on month
 let currentYear = currentDate.getFullYear(); // returns current Year
 let currentHour = currentDate.getHours(); // returns current hour
+let $saveBtn = $(".saveBtn"); //grabs save buttons
+let $scheduleTime = $(".scheduleTime"); //a class group containing all schedule textboxes
+let startingTimeValue = 9; // used to add data value attribute to saveBtn and scheduleTime
 
-//Current Date display at top of Page
-
-//string line displaying day of week, month, date, ordinal, and year
+// top of page:  displaying day of week, month, date, ordinal, and year
 $currentDateandDay.html(
   `${daysOfWeek[currentDayOfWeek]},  ${
     monthsInYear[currentMonth - 1]
@@ -57,18 +58,33 @@ function dateOrdinal() {
   }
 }
 
-//sets the past, present, and future css.
-thisTime = document.querySelectorAll(".thisTime");
-startingTimeValue = 9;
+//sets text areas to past, present, and future css classes.
 
-for (i = 0; i < thisTime.length; i++) {
-  thisTime[i].setAttribute("data-value", startingTimeValue);
+$scheduleTime.each(function () {
+  $(this).attr("data-value", startingTimeValue);
   startingTimeValue++;
-  if (thisTime[i].getAttribute("data-value") > currentHour) {
-    thisTime[i].classList.add("future");
-  } else if (parseInt(thisTime[i].getAttribute("data-value")) === currentHour) {
-    thisTime[i].classList.add("present");
+  if (parseInt($(this).attr("data-value")) > currentHour) {
+    $(this).addClass("future");
+  } else if (parseInt($(this).attr("data-value")) === currentHour) {
+    $(this).addClass("present");
   } else {
-    thisTime[i].classList.add("past");
+    $(this).addClass("past");
   }
-}
+});
+
+startingTimeValue = 9;
+//add data value to each save button
+$saveBtn.each(function () {
+  $(this).attr("data-value", startingTimeValue);
+  startingTimeValue++;
+});
+
+//save text data to local storage
+$saveBtn.on("click", function () {
+  let btnValue = $(this).attr("data-value");
+  console.log(btnValue);
+  $scheduleTime.each(function () {
+    if ($(this).attr("data-value") == btnValue) {
+    }
+  });
+});
