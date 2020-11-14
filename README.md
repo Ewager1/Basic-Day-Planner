@@ -1,6 +1,6 @@
 # Basic Day Planner
 
-[Coding Trivia Game ](https://ewager1.github.io/Basic-Day-Planner/)
+[Day Planner ](https://ewager1.github.io/Basic-Day-Planner/)
 ![Website Demo Picture](./Assets/demoPic.png)
 
 ## Goal
